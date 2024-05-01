@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://ck3wpf8shfvcj"]
+
+[ext_resource type="Script" path="res://src/world/inert/rope/rope.gd" id="1_bvlri"]
+[ext_resource type="Script" path="res://src/world/radial_polygon.gd" id="1_fc3e7"]
+[ext_resource type="Script" path="res://src/resources/common_variables/circle.gd" id="2_dgabo"]
+[ext_resource type="Shader" path="res://src/resources/shaders/outdated_wire.gdshader" id="3_j38cy"]
+
+[sub_resource type="Curve3D" id="Curve3D_psda2"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.965447, 0.431311, -0.148616, 0.251041, -0.0128304, -0.0271733, -0.251041, 0.0128304, 0.0271733, 0.432373, 0.720261, -0.0896344, 0.132214, 0.00561255, 0.117189, -0.132214, -0.00561255, -0.117189, -0.0764945, 0.702064, 0.240187, 0, 0, 0, 0, 0, 0, -0.400663, 1.48855, -0.481911),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Resource" id="Resource_pgrmi"]
+script = ExtResource("2_dgabo")
+points_count = 8
+radius = 0.03
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2v601"]
+render_priority = 0
+shader = ExtResource("3_j38cy")
+shader_parameter/base_color = Color(0, 0, 0, 1)
+shader_parameter/on_color = Color(0, 1, 1, 1)
+shader_parameter/radiance_color = Color(1, 1, 1, 1)
+shader_parameter/radiance = 5.0
+
+[node name="Rope" type="Path3D"]
+curve = SubResource("Curve3D_psda2")
+script = ExtResource("1_bvlri")
+circle = SubResource("Resource_pgrmi")
+material = SubResource("ShaderMaterial_2v601")
+
+[node name="Polygon3D" type="CSGPolygon3D" parent="."]
+unique_name_in_owner = true
+operation = 1
+polygon = PackedVector2Array(0.03, 0, 0.0212132, 0.0212132, 1.83691e-18, 0.03, -0.0212132, 0.0212132, -0.03, 3.67382e-18, -0.0212132, -0.0212132, -5.51073e-18, -0.03, 0.0212132, -0.0212132)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.001
+path_simplify_angle = 4.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = false
+smooth_faces = true
+material = SubResource("ShaderMaterial_2v601")
+script = ExtResource("1_fc3e7")
+circle = SubResource("Resource_pgrmi")

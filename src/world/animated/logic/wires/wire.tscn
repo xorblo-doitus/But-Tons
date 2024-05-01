@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://blotf5wpihbu2"]
+
+[ext_resource type="PackedScene" uid="uid://ck3wpf8shfvcj" path="res://src/world/inert/rope/rope.tscn" id="1_m7dbq"]
+[ext_resource type="Script" path="res://src/world/animated/logic/wires/wire.gd" id="2_25xrt"]
+[ext_resource type="Script" path="res://src/resources/common_variables/circle.gd" id="3_wibmm"]
+[ext_resource type="Material" uid="uid://crtki6d4djadj" path="res://src/world/animated/logic/wires/materials/resistant.tres" id="4_0krk7"]
+
+[sub_resource type="Resource" id="Resource_du3rx"]
+script = ExtResource("3_wibmm")
+points_count = 8
+radius = 0.03
+
+[node name="Wire" groups=["_on_editor_scene_changed", "wire"] instance=ExtResource("1_m7dbq")]
+script = ExtResource("2_25xrt")
+circle = SubResource("Resource_du3rx")
+material = ExtResource("4_0krk7")
+
+[node name="Polygon3D" parent="." index="0"]
+instance_shader_parameters/progress = 1.0
+material = ExtResource("4_0krk7")
+circle = SubResource("Resource_du3rx")

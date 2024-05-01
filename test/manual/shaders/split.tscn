@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://8c3k17tt51gg"]
+
+[ext_resource type="Texture2D" uid="uid://btk271e0heuq2" path="res://godot_icon.svg" id="1_s08gm"]
+[ext_resource type="PackedScene" uid="uid://cjhaij8hhggav" path="res://src/resources/shaders/split_screen_shader.tscn" id="2_krpf8"]
+[ext_resource type="Shader" path="res://src/resources/shaders/split.gdshader" id="3_tbv2y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rohhe"]
+shader = ExtResource("3_tbv2y")
+shader_parameter/horizontal_split_pixel = 8.0
+shader_parameter/vertical_split_pixel = 8.0
+
+[node name="SplitShaderTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GodotIcon" type="Sprite2D" parent="."]
+z_index = -4096
+position = Vector2(638, 224)
+texture = ExtResource("1_s08gm")
+
+[node name="White" type="ColorRect" parent="GodotIcon"]
+offset_left = 326.0
+offset_top = 88.0
+offset_right = 366.0
+offset_bottom = 128.0
+
+[node name="Green" type="ColorRect" parent="GodotIcon"]
+offset_left = 158.0
+offset_top = 282.0
+offset_right = 198.0
+offset_bottom = 322.0
+color = Color(0, 1, 0, 1)
+
+[node name="Blue" type="ColorRect" parent="GodotIcon"]
+offset_left = 319.0
+offset_top = 286.0
+offset_right = 359.0
+offset_bottom = 326.0
+color = Color(0, 0, 1, 1)
+
+[node name="Red" type="ColorRect" parent="GodotIcon"]
+offset_left = -21.0
+offset_top = 283.0
+offset_right = 19.0
+offset_bottom = 323.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect" parent="." instance=ExtResource("2_krpf8")]
+material = SubResource("ShaderMaterial_rohhe")
+layout_mode = 1
+grow_horizontal = 1
+grow_vertical = 1

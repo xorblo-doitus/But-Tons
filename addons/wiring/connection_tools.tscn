@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxg3yfb6thfno"]
+
+[ext_resource type="Script" path="res://addons/wiring/connection_tools.gd" id="1_8foro"]
+
+[node name="ConnectionTools" type="HBoxContainer"]
+visible = false
+script = ExtResource("1_8foro")
+
+[node name="ReverseButton" type="Button" parent="."]
+layout_mode = 2
+text = "Reverse"
+
+[node name="SelectWire" type="Button" parent="."]
+layout_mode = 2
+disabled = true
+text = "No wire"
+
+[node name="CreateWire" type="Button" parent="."]
+layout_mode = 2
+text = "Create wire"
+
+[connection signal="pressed" from="ReverseButton" to="." method="reverse"]
+[connection signal="pressed" from="SelectWire" to="." method="select_wire"]
+[connection signal="pressed" from="CreateWire" to="." method="create_wire"]

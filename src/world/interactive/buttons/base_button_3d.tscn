@@ -1,0 +1,139 @@
+[gd_scene load_steps=18 format=3 uid="uid://hm8oj8wvbevv"]
+
+[ext_resource type="PackedScene" uid="uid://ci0q1qwwwt6bg" path="res://src/world/interactive/logic_element.tscn" id="1_emaxx"]
+[ext_resource type="Script" path="res://src/world/interactive/buttons/base_button_3d.gd" id="2_58l3s"]
+[ext_resource type="PackedScene" uid="uid://cao3qrtn0j8qp" path="res://src/world/interactive/buttons/clickable.tscn" id="2_wh3bv"]
+[ext_resource type="ArrayMesh" uid="uid://dq5gn0ka3nhpa" path="res://src/world/interactive/buttons/button_mesh.res" id="4_cbxv6"]
+[ext_resource type="ArrayMesh" uid="uid://iuifqmq0rgps" path="res://src/world/interactive/buttons/button_clickable_mesh.res" id="5_2ka08"]
+[ext_resource type="Material" uid="uid://dxhggm34u8ge4" path="res://src/world/interactive/buttons/materials/red_button.tres" id="5_tsf1f"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vxfpv"]
+height = 0.1
+radius = 0.1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5ge3a"]
+animation = &"push"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_43uha"]
+animation = &"release"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ora6d"]
+advance_mode = 2
+advance_expression = "on"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eukls"]
+advance_mode = 2
+advance_expression = "not on"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_803jm"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_plp0q"]
+states/End/position = Vector2(783, 130)
+states/Start/position = Vector2(360, 130)
+states/push/node = SubResource("AnimationNodeAnimation_5ge3a")
+states/push/position = Vector2(558, 176)
+states/release/node = SubResource("AnimationNodeAnimation_43uha")
+states/release/position = Vector2(558, 78)
+transitions = ["release", "push", SubResource("AnimationNodeStateMachineTransition_ora6d"), "push", "release", SubResource("AnimationNodeStateMachineTransition_eukls"), "Start", "release", SubResource("AnimationNodeStateMachineTransition_803jm")]
+
+[sub_resource type="Animation" id="Animation_xv5ar"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pushable:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pushable:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_tkbvj"]
+resource_name = "push"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pushable:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.035, -0.25, 0, 0.2, -0.0388114, -0.000143606, 0, -0.00833591, 0.1, 0.0240074),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_thncx"]
+resource_name = "release"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pushable:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.035, -0.1, 0.026042, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g37m8"]
+_data = {
+"RESET": SubResource("Animation_xv5ar"),
+"push": SubResource("Animation_tkbvj"),
+"release": SubResource("Animation_thncx")
+}
+
+[node name="BaseButton3D" instance=ExtResource("1_emaxx")]
+script = ExtResource("2_58l3s")
+mode = 0
+time_s = 1.0
+
+[node name="Clickable" parent="." index="0" instance=ExtResource("2_wh3bv")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clickable" index="0"]
+shape = SubResource("CylinderShape3D_vxfpv")
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="1"]
+tree_root = SubResource("AnimationNodeStateMachine_plp0q")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_g37m8")
+}
+
+[node name="Static" type="Node3D" parent="." index="3"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Static" index="0"]
+mesh = ExtResource("4_cbxv6")
+
+[node name="Pushable" type="Node3D" parent="." index="4"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pushable" index="0"]
+material_override = ExtResource("5_tsf1f")
+mesh = ExtResource("5_2ka08")
+
+[node name="Timer" type="Timer" parent="." index="5"]
+
+[connection signal="activated" from="." to="." method="_on_activated"]
+[connection signal="deactivated" from="." to="." method="_on_deactivated"]
+[connection signal="clicked" from="Clickable" to="." method="_on_clicked"]
+[connection signal="released" from="Clickable" to="." method="_on_released"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

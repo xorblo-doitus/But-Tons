@@ -1,0 +1,311 @@
+[gd_scene load_steps=30 format=3 uid="uid://ciceafugib0p4"]
+
+[ext_resource type="Script" path="res://src/world/world.gd" id="1_nomqr"]
+[ext_resource type="PackedScene" uid="uid://d2rmt418tkecj" path="res://src/world/entities/player/player.tscn" id="2_q2ywb"]
+[ext_resource type="PackedScene" uid="uid://hm8oj8wvbevv" path="res://src/world/interactive/buttons/base_button_3d.tscn" id="3_5qugj"]
+[ext_resource type="PackedScene" uid="uid://blotf5wpihbu2" path="res://src/world/animated/logic/wires/wire.tscn" id="4_ldgvd"]
+[ext_resource type="PackedScene" uid="uid://bqqpo6wfv8bsv" path="res://src/world/animated/logic/logic_connection.tscn" id="5_b61p8"]
+[ext_resource type="Script" path="res://src/resources/common_variables/circle.gd" id="5_vel6m"]
+[ext_resource type="PackedScene" uid="uid://ci0q1qwwwt6bg" path="res://src/world/interactive/logic_element.tscn" id="6_eplv3"]
+[ext_resource type="Material" uid="uid://bx7a6anjlaw08" path="res://src/world/animated/logic/wires/materials/disabled.tres" id="6_moivy"]
+[ext_resource type="Material" uid="uid://cbl30dln6tys5" path="res://src/world/animated/logic/wires/materials/delayed.tres" id="6_u55m8"]
+[ext_resource type="Material" uid="uid://bfnqqyso2brfo" path="res://src/world/animated/logic/wires/materials/enabled.tres" id="7_55qjc"]
+[ext_resource type="PackedScene" uid="uid://iaejdf37qhn5" path="res://src/world/inert/rope/path3D_import.tscn" id="7_uc433"]
+[ext_resource type="Shader" path="res://src/world/animated/logic/wires/shaders/resistant.gdshader" id="12_ercvn"]
+[ext_resource type="Shader" path="res://src/world/animated/logic/wires/shaders/delayed.gdshader" id="12_vdruw"]
+
+[sub_resource type="Curve3D" id="Curve3D_tdsa1"]
+bake_interval = 0.03
+_data = {
+"points": PackedVector3Array(0, 0, 0, -1, 0, 0, 0.596517, -0.703997, -0.344693, 1, 0, 0, -1, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_txb0b"]
+_data = {
+"points": PackedVector3Array(-0.0840149, -0.0414949, 0.214172, 0.0840149, 0.0414949, -0.214172, 0.501534, -0.0850263, -0.386279, 0.217242, -0.000156164, 0.0673754, -0.217242, 0.000156164, -0.0673754, 0.379414, -0.0837975, -0.909743),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_tpqaj"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.926391, -0.00742368, -0.0732515, 0, 0, 0, 0, 0, 0, 0.656945, -0.0030009, -0.619551, 0, 0, 0, 0, 0, 0, 0.569823, -0.00226967, -0.203504, 0, 0, 0, 0, 0, 0, 0.0671519, -0.00107066, -0.522779, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_t8et1"]
+bake_interval = 0.03
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.704014, -0.0245191, 0.372328, -0.590921, -0.0215834, -0.0747075, 0.590921, 0.0215834, 0.0747075, -0.258751, -0.0239146, 1.1075, 0.8177, 0.00491989, 0.0587354, -0.8177, -0.00491989, -0.0587354, 0.559617, -0.0242075, 0.692433, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_v2sfb"]
+bake_interval = 0.03
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.21045, 0.0310586, -1.95638, -0.0928867, 0.0311424, -0.751529, 0.0928867, -0.0311424, 0.751529, 0.411485, 0.0293341, -1.29131),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_pdqkg"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.411485, 0.0293341, -1.29131, 0, 0, 0, 0, 0, 0, 0.944801, 0.0205135, -0.938047),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_xkr3h"]
+script = ExtResource("5_vel6m")
+points_count = 8
+radius = 0.03
+
+[sub_resource type="Curve3D" id="Curve3D_nwwu4"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.5365, -0.00782251, -2.34857, 0, 0, 0, 0, 0, 0, 1.9962, 0.0286942, -2.38427),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_ysaf1"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.00187001, -0.00744796, -2.32414, 0, 0, 0, 0, 0, 0, 0.390541, 0.0294337, -1.91555),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="SphereMesh" id="SphereMesh_816bg"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="Gradient" id="Gradient_lq6k0"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.117647, 0.25, 0.426471, 0.485294, 0.551471)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ym6o7"]
+gradient = SubResource("Gradient_lq6k0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xnw68"]
+render_priority = 0
+shader = ExtResource("12_vdruw")
+shader_parameter/base_color = Color(0, 0, 0, 1)
+shader_parameter/on_color = Color(0, 1, 1, 1)
+shader_parameter/on_gradient = SubResource("GradientTexture1D_ym6o7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1gkct"]
+render_priority = 0
+shader = ExtResource("12_ercvn")
+shader_parameter/base_color = Color(0, 0, 0, 1)
+shader_parameter/on_color = Color(0, 1, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lejoh"]
+size = Vector2(10, 10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0tain"]
+data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_nomqr")
+
+[node name="PluginTest" type="Node3D" parent="."]
+
+[node name="PluginTestButton" parent="PluginTest" instance=ExtResource("3_5qugj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.04793, 0.0330467, 0.414129)
+out_socket_handle = Vector3(-1, 0, 0)
+
+[node name="LogicElement" parent="PluginTest/PluginTestButton" instance=ExtResource("6_eplv3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.131478, 0.852089, -0.607054)
+
+[node name="LogicConnection" parent="PluginTest/PluginTestButton/LogicElement" node_paths=PackedStringArray("from", "to") instance=ExtResource("5_b61p8")]
+from = NodePath("../..")
+to = NodePath("..")
+
+[node name="LogicElement2" parent="PluginTest/PluginTestButton" instance=ExtResource("6_eplv3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.259251, 1.72506, 1.7226)
+
+[node name="LogicConnection" parent="PluginTest/PluginTestButton/LogicElement2" node_paths=PackedStringArray("from", "to") instance=ExtResource("5_b61p8")]
+from = NodePath("../..")
+to = NodePath("..")
+
+[node name="LogicElement3" parent="PluginTest/PluginTestButton" instance=ExtResource("6_eplv3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.596517, 0.703997, 0.344693)
+in_socket_handle = Vector3(1, 0, 0)
+
+[node name="LogicConnection" parent="PluginTest/PluginTestButton/LogicElement3" node_paths=PackedStringArray("from", "to") instance=ExtResource("5_b61p8")]
+from = NodePath("../..")
+to = NodePath("..")
+
+[node name="Wire" parent="PluginTest/PluginTestButton/LogicElement3" node_paths=PackedStringArray("connection") instance=ExtResource("4_ldgvd")]
+curve = SubResource("Curve3D_tdsa1")
+connection = NodePath("../LogicConnection")
+material = ExtResource("7_55qjc")
+
+[node name="LogicElement" parent="PluginTest" instance=ExtResource("6_eplv3")]
+
+[node name="LogicConnection" parent="PluginTest/LogicElement" node_paths=PackedStringArray("from", "to") instance=ExtResource("5_b61p8")]
+from = NodePath("../../PluginTestButton")
+to = NodePath("..")
+
+[node name="WireTest" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.80729, 0.0811115, -1.18788)
+
+[node name="Wire" parent="WireTest" node_paths=PackedStringArray("connection") instance=ExtResource("4_ldgvd")]
+connection = NodePath("Mais")
+material = ExtResource("7_55qjc")
+
+[node name="FROM" parent="WireTest/Wire" instance=ExtResource("6_eplv3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0272684, 0.434126, 0.302605)
+out_socket_handle = Vector3(-0.5, 0, -0.5)
+
+[node name="TO" parent="WireTest/Wire" instance=ExtResource("6_eplv3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.383326, -2.01564)
+in_socket_handle = Vector3(-1, 0, 0)
+
+[node name="Mais" parent="WireTest/Wire" node_paths=PackedStringArray("from", "to") instance=ExtResource("5_b61p8")]
+from = NodePath("../FROM")
+to = NodePath("../TO")
+
+[node name="Path3DImport" parent="WireTest" node_paths=PackedStringArray("from", "to") instance=ExtResource("7_uc433")]
+from = NodePath("../Path3D")
+to = NodePath("../Wire")
+end_i = 2
+assignation_offset = 1
+
+[node name="Path3D" type="Path3D" parent="WireTest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0358117, -0.695495)
+curve = SubResource("Curve3D_txb0b")
+
+[node name="BaseButton" parent="." instance=ExtResource("3_5qugj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30803, 0.0303858, -2)
+mode = 1
+
+[node name="RElem" parent="BaseButton" instance=ExtResource("6_eplv3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92781, -0.00163832, 0.0877221)
+
+[node name="LogicConnection" parent="BaseButton/RElem" node_paths=PackedStringArray("from", "to") instance=ExtResource("5_b61p8")]
+from = NodePath("../..")
+to = NodePath("..")
+mode = 2
+
+[node name="Wire" parent="BaseButton/RElem" node_paths=PackedStringArray("connection") instance=ExtResource("4_ldgvd")]
+curve = SubResource("Curve3D_tpqaj")
+connection = NodePath("../LogicConnection")
+
+[node name="DElem" parent="BaseButton" instance=ExtResource("6_eplv3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.694222, -0.00740997, -0.387239)
+
+[node name="LogicConnection" parent="BaseButton/DElem" node_paths=PackedStringArray("from", "to") instance=ExtResource("5_b61p8")]
+from = NodePath("../..")
+to = NodePath("..")
+mode = 1
+
+[node name="Wire" parent="BaseButton/DElem" node_paths=PackedStringArray("connection") instance=ExtResource("4_ldgvd")]
+curve = SubResource("Curve3D_t8et1")
+connection = NodePath("../LogicConnection")
+material = ExtResource("6_u55m8")
+
+[node name="Wire" parent="." node_paths=PackedStringArray("connection") instance=ExtResource("4_ldgvd")]
+curve = SubResource("Curve3D_v2sfb")
+connection = NodePath("LogicConnection")
+material = ExtResource("7_55qjc")
+
+[node name="LogicConnection" parent="Wire" node_paths=PackedStringArray("from", "to") instance=ExtResource("5_b61p8")]
+from = NodePath("../../BaseButton")
+to = NodePath("../LogicElement")
+
+[node name="LogicElement" parent="Wire" instance=ExtResource("6_eplv3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36887, 0, -1.29693)
+
+[node name="Wire2" parent="." node_paths=PackedStringArray("connection") instance=ExtResource("4_ldgvd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00948365, 0)
+curve = SubResource("Curve3D_pdqkg")
+connection = NodePath("LogicConnection")
+circle = SubResource("Resource_xkr3h")
+material = ExtResource("7_55qjc")
+
+[node name="LogicConnection" parent="Wire2" node_paths=PackedStringArray("from", "to") instance=ExtResource("5_b61p8")]
+from = NodePath("../../Wire/LogicElement")
+to = NodePath("../LogicElement")
+
+[node name="LogicElement" parent="Wire2" instance=ExtResource("6_eplv3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.927861, 0, -0.911823)
+
+[node name="Wire3" parent="." node_paths=PackedStringArray("connection") instance=ExtResource("4_ldgvd")]
+curve = SubResource("Curve3D_nwwu4")
+connection = NodePath("LogicConnection")
+circle = SubResource("Resource_xkr3h")
+material = ExtResource("7_55qjc")
+
+[node name="LogicConnection" parent="Wire3" node_paths=PackedStringArray("from", "to") instance=ExtResource("5_b61p8")]
+from = NodePath("../../BaseButton/DElem")
+to = NodePath("../LogicElement")
+
+[node name="LogicElement" parent="Wire3" instance=ExtResource("6_eplv3")]
+
+[node name="Wire4" parent="." node_paths=PackedStringArray("connection") instance=ExtResource("4_ldgvd")]
+curve = SubResource("Curve3D_ysaf1")
+connection = NodePath("LogicConnection")
+circle = SubResource("Resource_xkr3h")
+material = ExtResource("7_55qjc")
+
+[node name="LogicConnection" parent="Wire4" node_paths=PackedStringArray("from", "to") instance=ExtResource("5_b61p8")]
+from = NodePath("../../BaseButton/RElem")
+to = NodePath("../LogicElement")
+
+[node name="LogicElement" parent="Wire4" instance=ExtResource("6_eplv3")]
+
+[node name="Materials" type="Node3D" parent="."]
+
+[node name="Disabled" type="MeshInstance3D" parent="Materials"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 4)
+material_override = ExtResource("6_moivy")
+mesh = SubResource("SphereMesh_816bg")
+skeleton = NodePath("../..")
+
+[node name="Enabled" type="MeshInstance3D" parent="Materials"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.31569, 1.53528, 3.96463)
+material_override = ExtResource("7_55qjc")
+mesh = SubResource("SphereMesh_816bg")
+skeleton = NodePath("../..")
+
+[node name="Progress" type="MeshInstance3D" parent="Materials"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64052, 1.53528, 3.96463)
+material_override = SubResource("ShaderMaterial_xnw68")
+mesh = SubResource("SphereMesh_816bg")
+skeleton = NodePath("../..")
+
+[node name="Resistance" type="MeshInstance3D" parent="Materials"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.07271, 1.53528, 3.96463)
+material_override = SubResource("ShaderMaterial_1gkct")
+instance_shader_parameters/progress = 0.75
+mesh = SubResource("SphereMesh_816bg")
+skeleton = NodePath("../..")
+
+[node name="Player" parent="." instance=ExtResource("2_q2ywb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0191884, 1.1233, 1.04274)
+
+[node name="Plane" type="StaticBody3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plane"]
+mesh = SubResource("PlaneMesh_lejoh")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane"]
+shape = SubResource("ConcavePolygonShape3D_0tain")
+metadata/_edit_lock_ = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.707107, 0.707107, 0, -0.707107, -0.707107, 0, 0, 0)
+light_color = Color(1, 1, 0, 1)
+shadow_enabled = true
+
+[node name="BaseButton3D" parent="." instance=ExtResource("3_5qugj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.828, 0.05, -1.991)
+mode = 2

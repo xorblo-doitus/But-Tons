@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkwjwvs5xot5k"]
+
+[ext_resource type="PackedScene" uid="uid://blotf5wpihbu2" path="res://src/world/animated/logic/wires/wire.tscn" id="1_yqwwl"]
+[ext_resource type="Script" path="res://src/world/animated/logic/wires/resistance_wire.gd" id="2_dulo0"]
+[ext_resource type="Shader" path="res://src/world/animated/logic/wires/shaders/resistant.gdshader" id="3_nwvhh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vriwa"]
+render_priority = 0
+shader = ExtResource("3_nwvhh")
+shader_parameter/base_color = Color(0, 0, 0, 1)
+shader_parameter/on_color = Color(1, 0.5, 0, 1)
+
+[node name="ResistanceWire" instance=ExtResource("1_yqwwl")]
+script = ExtResource("2_dulo0")
+material = SubResource("ShaderMaterial_vriwa")
+
+[node name="RadialPolygon3D" parent="." index="0"]
+instance_shader_parameters/progress = 1.0
+material = SubResource("ShaderMaterial_vriwa")

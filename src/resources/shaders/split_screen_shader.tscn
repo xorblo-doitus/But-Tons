@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjhaij8hhggav"]
+
+[ext_resource type="Shader" path="res://src/resources/shaders/split.gdshader" id="1_yp2da"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_773q5"]
+shader = ExtResource("1_yp2da")
+shader_parameter/horizontal_split_pixel = 8.0
+shader_parameter/vertical_split_pixel = 8.0
+
+[node name="ColorRect" type="ColorRect"]
+z_index = -2048
+material = SubResource("ShaderMaterial_773q5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

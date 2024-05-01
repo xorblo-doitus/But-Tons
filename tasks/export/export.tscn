@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://50gjh52astaj"]
+
+[ext_resource type="Script" path="res://tasks/export/export.gd" id="1_quvkc"]
+
+[sub_resource type="GDScript" id="GDScript_224tj"]
+script/source = "extends ConfirmationDialog
+
+
+signal choosed(override: bool)
+
+
+func _on_canceled() -> void:
+	choosed.emit(false)
+
+
+func _on_confirmed() -> void:
+	choosed.emit(true)
+"
+
+[node name="Export" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_quvkc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Controls" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="Debug" type="CheckBox" parent="HBoxContainer/Controls"]
+layout_mode = 2
+text = "Debug"
+
+[node name="OnlyPCK" type="CheckBox" parent="HBoxContainer/Controls"]
+layout_mode = 2
+text = "Only PCK"
+
+[node name="Plateforms" type="ItemList" parent="HBoxContainer/Controls"]
+layout_mode = 2
+select_mode = 1
+auto_height = true
+item_count = 4
+item_0/text = "html_github_pages"
+item_1/text = "windows"
+item_2/text = "linux"
+item_3/text = "html"
+
+[node name="ExportName" type="LineEdit" parent="HBoxContainer/Controls"]
+layout_mode = 2
+placeholder_text = "Name"
+
+[node name="Export" type="Button" parent="HBoxContainer/Controls"]
+layout_mode = 2
+text = "Export
+"
+
+[node name="QuickExport" type="Button" parent="HBoxContainer/Controls"]
+layout_mode = 2
+text = "Quick export"
+
+[node name="Output" type="CodeEdit" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Output:"
+
+[node name="AlreadyExist" type="ConfirmationDialog" parent="."]
+title = "Export already exists!"
+ok_button_text = "Override"
+dialog_text = "The export for this plateform and this name already exist, do you want to override it?"
+script = SubResource("GDScript_224tj")
+
+[connection signal="pressed" from="HBoxContainer/Controls/Export" to="." method="_on_export_pressed"]
+[connection signal="pressed" from="HBoxContainer/Controls/QuickExport" to="." method="_on_quick_export_pressed"]
+[connection signal="canceled" from="AlreadyExist" to="AlreadyExist" method="_on_canceled"]
+[connection signal="confirmed" from="AlreadyExist" to="AlreadyExist" method="_on_confirmed"]

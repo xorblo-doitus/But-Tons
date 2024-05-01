@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dckmx2o14em3x"]
+
+[ext_resource type="Material" uid="uid://bfnqqyso2brfo" path="res://src/world/animated/logic/wires/materials/enabled.tres" id="1_xvcwf"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_tk7h5"]
+
+[node name="Color" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.05723)
+material_override = ExtResource("1_xvcwf")
+mesh = SubResource("SphereMesh_tk7h5")
+
+[node name="Camera3D" type="Camera3D" parent="."]

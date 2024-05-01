@@ -1,0 +1,11 @@
+- [x] Add an export task.
+  - [ ] Add better GitHub Pages export control (play/index.html redirecting to multiple versions with a big button for the latest)
+- [ ] Fix line edit addon error about type
+- [ ] Improve settings visuals
+- [x] Port ErrorHelper from Bloc-Notes++
+- [ ] Improve theme
+- [ ] Improve folder structure
+- [x] Add a way to show multiple errors
+- [ ] Add different icons for different error levels
+- [ ] Translate keys (like in error helper)
+  - [ ] ERROR_WITHOUT_DESCRIPTION
