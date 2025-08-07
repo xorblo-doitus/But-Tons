@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bqqpo6wfv8bsv"]
 
-[ext_resource type="Script" path="res://src/world/animated/logic/logic_connection.gd" id="1_n8ew8"]
+[ext_resource type="Script" uid="uid://btxa371mt6sn0" path="res://src/world/animated/logic/logic_connection.gd" id="1_n8ew8"]
 
 [node name="LogicConnection" type="Node" groups=["logic_connection"]]
 script = ExtResource("1_n8ew8")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cukcro8flv5mq"]
 
-[ext_resource type="Script" path="res://addons/complete_settings/scenes/setting_entry/setting_entry.gd" id="1_ied73"]
+[ext_resource type="Script" uid="uid://cirdy3n74le8u" path="res://addons/complete_settings/scenes/setting_entry/setting_entry.gd" id="1_ied73"]
 
 [node name="SettingEntry" type="HBoxContainer"]
 size_flags_horizontal = 3

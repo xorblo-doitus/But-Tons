@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://crk6w2c5fds67"]
 
-[ext_resource type="Script" path="res://addons/keybind_remap/input_chooser/input_chooser.gd" id="1_2ttcb"]
+[ext_resource type="Script" uid="uid://tjmslb6vmsws" path="res://addons/keybind_remap/input_chooser/input_chooser.gd" id="1_2ttcb"]
 [ext_resource type="PackedScene" uid="uid://dcjp53yyqfql7" path="res://addons/keybind_remap/input_display/input_display.tscn" id="2_68mh2"]
 
 [node name="DefaultInputChooser" type="PopupPanel" node_paths=PackedStringArray("input_display", "confirm_button", "cancel_button", "physical_toggle")]

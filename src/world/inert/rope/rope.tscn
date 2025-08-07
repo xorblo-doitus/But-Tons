@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://ck3wpf8shfvcj"]
 
-[ext_resource type="Script" path="res://src/world/inert/rope/rope.gd" id="1_bvlri"]
-[ext_resource type="Script" path="res://src/world/radial_polygon.gd" id="1_fc3e7"]
-[ext_resource type="Script" path="res://src/resources/common_variables/circle.gd" id="2_dgabo"]
-[ext_resource type="Shader" path="res://src/resources/shaders/outdated_wire.gdshader" id="3_j38cy"]
+[ext_resource type="Script" uid="uid://c3clln7fwbpcw" path="res://src/world/inert/rope/rope.gd" id="1_bvlri"]
+[ext_resource type="Script" uid="uid://bnc40tht4jiyk" path="res://src/world/radial_polygon.gd" id="1_fc3e7"]
+[ext_resource type="Script" uid="uid://c62k32duy5uyy" path="res://src/resources/common_variables/circle.gd" id="2_dgabo"]
+[ext_resource type="Shader" uid="uid://cdou54x4x41wl" path="res://src/resources/shaders/outdated_wire.gdshader" id="3_j38cy"]
 
 [sub_resource type="Curve3D" id="Curve3D_psda2"]
 bake_interval = 0.01

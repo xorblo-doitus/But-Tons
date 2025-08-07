@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dicmjv5wn0pd6"]
 
 [ext_resource type="PackedScene" uid="uid://cukcro8flv5mq" path="res://addons/complete_settings/scenes/setting_entry/setting_entry.tscn" id="1_8scvk"]
-[ext_resource type="Script" path="res://addons/complete_settings/scenes/categories/video/window_mode.gd" id="2_1vas3"]
+[ext_resource type="Script" uid="uid://orng6br8omdc" path="res://addons/complete_settings/scenes/categories/video/window_mode.gd" id="2_1vas3"]
 [ext_resource type="PackedScene" uid="uid://np18311ppboh" path="res://addons/easy_settings/listeners/base/option_button/esl_option_button.tscn" id="2_07xot"]
 
 [node name="SettingEntry" instance=ExtResource("1_8scvk")]

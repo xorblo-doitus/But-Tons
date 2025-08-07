@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ci8tse6hjy3ye"]
 
-[ext_resource type="Script" path="res://addons/slider_spin_box/slider_spin_box.gd" id="1_gh6jd"]
+[ext_resource type="Script" uid="uid://br0dhw5qithkk" path="res://addons/slider_spin_box/slider_spin_box.gd" id="1_gh6jd"]
 
 [node name="VSliderSpinBox" type="HBoxContainer"]
 offset_top = 55.0

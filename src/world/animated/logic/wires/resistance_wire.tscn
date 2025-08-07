@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dkwjwvs5xot5k"]
 
 [ext_resource type="PackedScene" uid="uid://blotf5wpihbu2" path="res://src/world/animated/logic/wires/wire.tscn" id="1_yqwwl"]
-[ext_resource type="Script" path="res://src/world/animated/logic/wires/resistance_wire.gd" id="2_dulo0"]
-[ext_resource type="Shader" path="res://src/world/animated/logic/wires/shaders/resistant.gdshader" id="3_nwvhh"]
+[ext_resource type="Script" uid="uid://cwarn8llwm387" path="res://src/world/animated/logic/wires/resistance_wire.gd" id="2_dulo0"]
+[ext_resource type="Shader" uid="uid://c0412sxg3gcke" path="res://src/world/animated/logic/wires/shaders/resistant.gdshader" id="3_nwvhh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vriwa"]
 render_priority = 0

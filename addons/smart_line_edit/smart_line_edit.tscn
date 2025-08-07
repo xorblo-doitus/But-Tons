@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://s6mk8i1l4u0t"]
 
-[ext_resource type="Script" path="res://addons/smart_line_edit/smart_line_edit.gd" id="1_nxr81"]
+[ext_resource type="Script" uid="uid://ckyklaj3jafil" path="res://addons/smart_line_edit/smart_line_edit.gd" id="1_nxr81"]
 [ext_resource type="Texture2D" uid="uid://diluf143a65a2" path="res://addons/smart_line_edit/Check.svg" id="2_trcu3"]
 [ext_resource type="Texture2D" uid="uid://d1kx0svywrwxq" path="res://addons/smart_line_edit/Folder.svg" id="3_4uo8e"]
 

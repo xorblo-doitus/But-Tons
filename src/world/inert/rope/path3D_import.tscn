@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://iaejdf37qhn5"]
 
-[ext_resource type="Script" path="res://src/world/inert/rope/path3D_import.gd" id="1_yg8cy"]
+[ext_resource type="Script" uid="uid://bv0uuspgg7rgf" path="res://src/world/inert/rope/path3D_import.gd" id="1_yg8cy"]
 
 [node name="Path3DImport" type="Node"]
 script = ExtResource("1_yg8cy")

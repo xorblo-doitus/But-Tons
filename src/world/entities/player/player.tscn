@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://d2rmt418tkecj"]
 
-[ext_resource type="Script" path="res://src/world/entities/player/player.gd" id="1_d7sj6"]
+[ext_resource type="Script" uid="uid://ca2og3lc514vh" path="res://src/world/entities/player/player.gd" id="1_d7sj6"]
 [ext_resource type="PackedScene" uid="uid://vbk4smapqtbo" path="res://src/world/entities/player/button_caster.tscn" id="2_3fiwv"]
 [ext_resource type="PackedScene" uid="uid://cjhaij8hhggav" path="res://src/resources/shaders/split_screen_shader.tscn" id="2_wn3gx"]
-[ext_resource type="Shader" path="res://src/resources/shaders/split.gdshader" id="3_nqopn"]
+[ext_resource type="Shader" uid="uid://xkx3t8rbrkvo" path="res://src/resources/shaders/split.gdshader" id="3_nqopn"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_stgcn"]
 

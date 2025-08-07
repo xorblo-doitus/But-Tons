@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://vbk4smapqtbo"]
 
-[ext_resource type="Script" path="res://src/world/entities/player/button_caster.gd" id="1_7agaq"]
+[ext_resource type="Script" uid="uid://b7irncird7tha" path="res://src/world/entities/player/button_caster.gd" id="1_7agaq"]
 
 [node name="ButtonCaster" type="RayCast3D"]
 target_position = Vector3(0, 0, -1)

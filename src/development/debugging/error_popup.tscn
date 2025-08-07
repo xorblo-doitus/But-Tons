@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c61ptdspoaehv"]
 
-[ext_resource type="Script" path="res://src/development/debugging/error_popup.gd" id="1_fy4eu"]
+[ext_resource type="Script" uid="uid://cj45kw3psy4l8" path="res://src/development/debugging/error_popup.gd" id="1_fy4eu"]
 
 [node name="ErrorPopup" type="AcceptDialog" groups=["window"]]
 title = "ERROR_UNKNOWN"

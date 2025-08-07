@@ -1,18 +1,18 @@
 [gd_scene load_steps=30 format=3 uid="uid://ciceafugib0p4"]
 
-[ext_resource type="Script" path="res://src/world/world.gd" id="1_nomqr"]
+[ext_resource type="Script" uid="uid://i23t1cu880u0" path="res://src/world/world.gd" id="1_nomqr"]
 [ext_resource type="PackedScene" uid="uid://d2rmt418tkecj" path="res://src/world/entities/player/player.tscn" id="2_q2ywb"]
 [ext_resource type="PackedScene" uid="uid://hm8oj8wvbevv" path="res://src/world/interactive/buttons/base_button_3d.tscn" id="3_5qugj"]
 [ext_resource type="PackedScene" uid="uid://blotf5wpihbu2" path="res://src/world/animated/logic/wires/wire.tscn" id="4_ldgvd"]
 [ext_resource type="PackedScene" uid="uid://bqqpo6wfv8bsv" path="res://src/world/animated/logic/logic_connection.tscn" id="5_b61p8"]
-[ext_resource type="Script" path="res://src/resources/common_variables/circle.gd" id="5_vel6m"]
+[ext_resource type="Script" uid="uid://c62k32duy5uyy" path="res://src/resources/common_variables/circle.gd" id="5_vel6m"]
 [ext_resource type="PackedScene" uid="uid://ci0q1qwwwt6bg" path="res://src/world/interactive/logic_element.tscn" id="6_eplv3"]
 [ext_resource type="Material" uid="uid://bx7a6anjlaw08" path="res://src/world/animated/logic/wires/materials/disabled.tres" id="6_moivy"]
 [ext_resource type="Material" uid="uid://cbl30dln6tys5" path="res://src/world/animated/logic/wires/materials/delayed.tres" id="6_u55m8"]
 [ext_resource type="Material" uid="uid://bfnqqyso2brfo" path="res://src/world/animated/logic/wires/materials/enabled.tres" id="7_55qjc"]
 [ext_resource type="PackedScene" uid="uid://iaejdf37qhn5" path="res://src/world/inert/rope/path3D_import.tscn" id="7_uc433"]
-[ext_resource type="Shader" path="res://src/world/animated/logic/wires/shaders/resistant.gdshader" id="12_ercvn"]
-[ext_resource type="Shader" path="res://src/world/animated/logic/wires/shaders/delayed.gdshader" id="12_vdruw"]
+[ext_resource type="Shader" uid="uid://c0412sxg3gcke" path="res://src/world/animated/logic/wires/shaders/resistant.gdshader" id="12_ercvn"]
+[ext_resource type="Shader" uid="uid://cgwd1bymnvnsl" path="res://src/world/animated/logic/wires/shaders/delayed.gdshader" id="12_vdruw"]
 
 [sub_resource type="Curve3D" id="Curve3D_tdsa1"]
 bake_interval = 0.03

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ci0q1qwwwt6bg"]
 
-[ext_resource type="Script" path="res://src/world/interactive/logic_element.gd" id="1_j1w4w"]
+[ext_resource type="Script" uid="uid://cl38vobepvjjx" path="res://src/world/interactive/logic_element.gd" id="1_j1w4w"]
 
 [node name="LogicElement" type="Node3D" groups=["logic_element"]]
 script = ExtResource("1_j1w4w")

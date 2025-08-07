@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://btk271e0heuq2" path="res://godot_icon.svg" id="1_s08gm"]
 [ext_resource type="PackedScene" uid="uid://cjhaij8hhggav" path="res://src/resources/shaders/split_screen_shader.tscn" id="2_krpf8"]
-[ext_resource type="Shader" path="res://src/resources/shaders/split.gdshader" id="3_tbv2y"]
+[ext_resource type="Shader" uid="uid://xkx3t8rbrkvo" path="res://src/resources/shaders/split.gdshader" id="3_tbv2y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rohhe"]
 shader = ExtResource("3_tbv2y")

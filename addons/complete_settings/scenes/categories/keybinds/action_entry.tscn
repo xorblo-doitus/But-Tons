@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwhxncugpvkhv"]
 
 [ext_resource type="PackedScene" uid="uid://cukcro8flv5mq" path="res://addons/complete_settings/scenes/setting_entry/setting_entry.tscn" id="1_aql6j"]
-[ext_resource type="Script" path="res://addons/complete_settings/scenes/categories/keybinds/action_entry.gd" id="2_rr7kd"]
+[ext_resource type="Script" uid="uid://346gxxrdavpe" path="res://addons/complete_settings/scenes/categories/keybinds/action_entry.gd" id="2_rr7kd"]
 [ext_resource type="PackedScene" uid="uid://bqptyqtakvwl7" path="res://addons/keybind_remap/input_mapper/input_mapper.tscn" id="3_15a7y"]
 [ext_resource type="Texture2D" uid="uid://dgw0fy3w5f31y" path="res://addons/complete_settings/scenes/categories/keybinds/add.svg" id="4_gi4sx"]
 

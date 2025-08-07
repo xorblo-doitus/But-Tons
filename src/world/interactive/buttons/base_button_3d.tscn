@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://hm8oj8wvbevv"]
 
 [ext_resource type="PackedScene" uid="uid://ci0q1qwwwt6bg" path="res://src/world/interactive/logic_element.tscn" id="1_emaxx"]
-[ext_resource type="Script" path="res://src/world/interactive/buttons/base_button_3d.gd" id="2_58l3s"]
+[ext_resource type="Script" uid="uid://bhrjh8n4428qu" path="res://src/world/interactive/buttons/base_button_3d.gd" id="2_58l3s"]
 [ext_resource type="PackedScene" uid="uid://cao3qrtn0j8qp" path="res://src/world/interactive/buttons/clickable.tscn" id="2_wh3bv"]
 [ext_resource type="ArrayMesh" uid="uid://dq5gn0ka3nhpa" path="res://src/world/interactive/buttons/button_mesh.res" id="4_cbxv6"]
 [ext_resource type="ArrayMesh" uid="uid://iuifqmq0rgps" path="res://src/world/interactive/buttons/button_clickable_mesh.res" id="5_2ka08"]
@@ -94,9 +94,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g37m8"]
 _data = {
-"RESET": SubResource("Animation_xv5ar"),
-"push": SubResource("Animation_tkbvj"),
-"release": SubResource("Animation_thncx")
+&"RESET": SubResource("Animation_xv5ar"),
+&"push": SubResource("Animation_tkbvj"),
+&"release": SubResource("Animation_thncx")
 }
 
 [node name="BaseButton3D" instance=ExtResource("1_emaxx")]

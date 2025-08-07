@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://btlubtyw0kv8a"]
 
 [ext_resource type="PackedScene" uid="uid://bqqpo6wfv8bsv" path="res://src/world/animated/logic/logic_connection.tscn" id="1_2hv56"]
-[ext_resource type="Script" path="res://src/world/animated/logic/logic_progressive_connection.gd" id="2_1cs0p"]
+[ext_resource type="Script" uid="uid://cm74ysxgi4qg4" path="res://src/world/animated/logic/logic_progressive_connection.gd" id="2_1cs0p"]
 
 [node name="ProgressiveLogicConnection" instance=ExtResource("1_2hv56")]
 script = ExtResource("2_1cs0p")

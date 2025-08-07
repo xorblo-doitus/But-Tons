@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://ch27vnc3ae446"]
 
 [ext_resource type="PackedScene" uid="uid://blotf5wpihbu2" path="res://src/world/animated/logic/wires/wire.tscn" id="1_3vyva"]
-[ext_resource type="Script" path="res://src/world/animated/logic/wires/progressive_wire.gd" id="2_c35vk"]
-[ext_resource type="Shader" path="res://src/world/animated/logic/wires/shaders/delayed.gdshader" id="3_kk82t"]
+[ext_resource type="Script" uid="uid://civmtk314e4i3" path="res://src/world/animated/logic/wires/progressive_wire.gd" id="2_c35vk"]
+[ext_resource type="Shader" uid="uid://cgwd1bymnvnsl" path="res://src/world/animated/logic/wires/shaders/delayed.gdshader" id="3_kk82t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xoqqi"]
 render_priority = 0

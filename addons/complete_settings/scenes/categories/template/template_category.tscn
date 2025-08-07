@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dmayp4du8pkmc"]
 
-[ext_resource type="Script" path="res://addons/complete_settings/scenes/categories/category.gd" id="1_xck30"]
+[ext_resource type="Script" uid="uid://bkpehhlnmyle3" path="res://addons/complete_settings/scenes/categories/category.gd" id="1_xck30"]
 
 [node name="TemplatCategory" type="Control" node_paths=PackedStringArray("setting_list", "collapse_all_button", "expand_all_button", "search_bar")]
 layout_mode = 3

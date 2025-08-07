@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://50gjh52astaj"]
 
-[ext_resource type="Script" path="res://tasks/export/export.gd" id="1_quvkc"]
+[ext_resource type="Script" uid="uid://bgnrkjux2a5cr" path="res://tasks/export/export.gd" id="1_quvkc"]
 
 [sub_resource type="GDScript" id="GDScript_224tj"]
 script/source = "extends ConfirmationDialog
